@@ -1,0 +1,37 @@
+﻿本主题根据www.storelicious.com(www.spiga.com.mx)的MinyxLITE 2.0主题扩展而成。
+本主题使用“署名-非商业性使用-相同方式共享 3.0”许可协议
+
+/* CC by-nc-sa v3 Start */
+http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh
+您可以自由：
+    复制、发行、展览、表演、放映、广播或通过信息网络传播本作品
+    创作演绎作品
+惟须遵守下列条件：
+    署名 — 您必须按照作者或者许可人指定的方式对作品进行署名。
+    非商业性使用 — 您不得将本作品用于商业目的。
+    相同方式共享 — 如果您改变、转换本作品或者以本作品为基础进行创作，您只能采用与本协议相同的许可协议发布基于本作品的演绎作品。 
+
+/* 原版 MinyxLITE 2.0 README START */
+
+www.spiga.com.mx | www.storelicious.com
+
+Gracias por adquirir este theme  creado por spiga.
+
+
+Licencia de este theme:
+http://creativecommons.org/licenses/by-nc-sa/2.5/mx/
+
+
+Eres libre de:
+
+    * copiar, distribuir y comunicar p�blicamente la obra
+    * hacer obras derivadas
+
+Bajo las condiciones siguientes:
+
+    * Atribuci�n. Debes reconocer la autor�a de la obra en los t�rminos especificados por el propio autor o licenciante.
+    * No comercial. No puedes utilizar esta obra para fines comerciales.
+    * Licenciamiento Rec�proco. Si alteras, transformas o creas una obra a partir de esta obra, solo podr�s distribuir la obra resultante bajo una licencia igual a �sta.
+
+/* 原版 MinyxLITE 2.0 README END */
+/* CC by-nc-sa v3 End */

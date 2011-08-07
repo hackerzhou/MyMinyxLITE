@@ -1,0 +1,84 @@
+2011/07/06 - 2011/08/07
+	修复404页面的排版问题
+	移除页面的 max width
+	页脚样式修改
+	修复license显示问题
+	留言增加MarkItUp支持（主题配置页面有开关）
+	留言时判定是否姓名和邮箱均已填写，如已填写，focus在textarea上
+	使用github来托管此项目，Google Code ( https://hackerzhou.googlecode.com/svn/trunk/PHP/MyMinyxLITE/ )上的更新截止
+
+2011/07/05
+	修复facebox特效失败的问题
+
+2011/06/25
+	移除license里面的table布局，使用div
+
+2011/06/24
+	去除主页框架中的table，全部使用div框架
+	为发布到wordpress，除了按照原主题要求使用CC协议外，增加了LGPL协议
+	增加评论分页功能
+	主题设置页面变更为theme-settings.php
+	根据wordpress主题标准调整了相关的函数实现，去除了过期的函数调用
+	去除了在窗体大小变动时修改div尺寸的javascript（理论上已经不需要了）
+	更新了主题的screenshot.png
+
+2011/06/21
+	增加jQuery CDN选择，可以从google，Microsoft，jquery cdn选择，也可以选择本地的jquery。
+	增加评论回复邮件提醒功能，用户评论的时候可以选择性打开是否接受回复邮件提醒。
+	进入特定页面才加载action和filter，理论上会提速一些
+
+2011/06/12
+	分离README.txt和LICENSE.txt，新增CHANGELOG.txt
+	增加管理界面的主题配置页面admin.php，在后台可以进行各项功能的配置及开关
+	将文章模板从index.php分离成article_template.php
+	使用异步的方式加载comments-ajax.js
+	增加google analytics脚本功能（需要在后台配置ID启用）
+	搜索方式使用google custom search engine（需在后台配置ID启用）和wordpress自带的搜索并存
+	lazy load和facebox特效是否启用可以在后台页面设置
+
+2011/06/01-2011/06/11
+	增加文章底部的版权说明
+	评论的input及textarea获得焦点高亮
+	增加评论自动滚动到评论区域
+	Google CSE搜索的翻页条样式修改及自动滚动到页面顶部
+	添加评论/无评论使用float:right，附到“本文有X条评论”之后
+	根据jquery-image-lazy-loading插件整合了lazy loading的效果（引入jquery.lazyload.mini.js）
+	移除无用的css和图片文件，为css sprite做准备
+	使用jquery重写了使用Google Custom Search Engine搜索的javascript代码
+	使用yuicompressor压缩css以及js
+	对图片增加facebox特效
+	移除wp_head注册的一些头，比如上一篇下一篇的链接等等
+	翻页使用原minyx-lite的上/下页图标
+	界面左右栏增加间隔
+	初步优化代码结构
+	使用css sprites整合图片资源
+	修改了comments.php在禁止评论时候的布局
+	移除未用到的css和png
+	压缩favicon.ico文件
+	在主页移除facebox和lazyload特效，减小传输量
+	生成首页的文章摘要时避免触发插件，造成加载不必要的js和css
+	jquery使用微软的cdn
+	使用data url来显示body的背景
+	fix ajax评论的格式问题
+	解决scrollToElement时页面过长导致动画卡的问题
+	回复评论以及取消回复的淡入淡出
+
+2011/05/28-2011/05/30
+	为了避免wordpress升级时替换自定义的feed代码，把feed-rss2.php放到了本主题目录下。在functions.php中把原来do_feed_rss2绑定到自己的函数上，用来load自定义过的feed-rss2.php。
+	fix了文章标题line-height太小导致换行时没有行距的问题
+	fix了在ipad/itouch或其他小屏幕设备上，css-sprite的background- position计算会有1像素的误差。解决办法是把itemFeed.png文件的高度放大了两像素，不过导致了图片尺寸上升很多，以后再来解决。
+	去除了显示代码用的pre标签，还需要进一步测试。
+	在RSS Feed中增加版权及文章Tag信息
+	footer和rss共用版权函数
+
+2011/05/06
+	修改整体样式，更换图标
+	标题SEO化
+	分页支持
+	默认显示第一个段落作为摘要
+	使用Google自定义搜索作为搜索页面，并修改样式
+	搜索翻页时跳转到页面顶端
+	2011/05/22
+	修改了嵌套评论的样式
+	在主题中增加了Ajax Comments功能，可以移除目前实现此功能的插件
+	增加了blockquote标签的关闭引号
