@@ -965,7 +965,6 @@ img.alignright {
 }
 .aligncenter,
 img.aligncenter {
-	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;

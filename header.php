@@ -28,7 +28,7 @@
 <?php } ?>
 <?php if (is_makeitup_comment_enable()) { ?>
 <link rel="stylesheet" type="text/css" href="<?php the_recource_url('/markitup/style.css') ?>" />
-<script type="text/javascript">loadJS("<?php the_recource_url('/markitup/jquery.markitup.js') ?>");$(document).ready(function(){$('#comment').markItUp(mySettings);});</script>
+<script type="text/javascript">loadJS("<?php the_recource_url('/markitup/jquery.markitup.js') ?>");</script>
 <?php } ?>
 <?php the_google_analytics_if_enable(); ?>
 </head>

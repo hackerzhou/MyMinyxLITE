@@ -608,3 +608,4 @@ var mySettings = {
 			{name:'插入链接', key:'L', openWith:'<a href="[![Link:!:http://]!]"(!( title="[![Title]!]")!)>', closeWith:'</a>', placeHolder:'Your text to link...' }
 		]
 	};
+$(document).ready(function(){$('#comment').markItUp(mySettings);});
