@@ -1,0 +1,11 @@
+﻿/*
+Theme Name: MyMinyxLite
+Theme URI: http://wiki.hackerzhou.me/My_Minyx_LITE
+Description: Customized Minyx LITE theme for wordpress, add some useful function to the theme.
+Version: 0.3.1
+Author: hackerzhou
+Author URI: http://hackerzhou.me/
+License: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+Tags: right-sidebar, flexible-width, two-columns, theme-options, threaded-comments
+*/

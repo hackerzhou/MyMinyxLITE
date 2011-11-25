@@ -1,3 +1,10 @@
+2011/11/25
+	修复底部footer区域在正文较少的情况下会跑到页面中间的问题
+
+2011/11/05
+	Move function calls from header.php to jquery.markitup.js. Because jquery.markitup.js use asyn load, so some function calls may cause undefined errors.
+	Fix style bugs while dealing with facebox img.
+
 2011/07/06 - 2011/08/07
 	修复404页面的排版问题
 	移除页面的 max width

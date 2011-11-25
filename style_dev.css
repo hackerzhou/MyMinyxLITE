@@ -2,7 +2,7 @@
 Theme Name: MyMinyxLite
 Theme URI: http://wiki.hackerzhou.me/My_Minyx_LITE
 Description: Customized Minyx LITE theme for wordpress, add some useful function to the theme.
-Version: 0.3
+Version: 0.3.1
 Author: hackerzhou
 Author URI: http://hackerzhou.me/
 License: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
@@ -11,13 +11,15 @@ Tags: right-sidebar, flexible-width, two-columns, theme-options, threaded-commen
 */
 
 html,body{
-	margin:0 ;
-	padding:0;
+	margin:0px;
+	padding:0px;
 	font: 12px/18px "微软雅黑","Microsoft YaHei","宋体","Lucida Grande", Geneva, Arial, Verdana, sans-serif;
 	background:#fff url(data:image/gif;base64,R0lGODlhAQCBAMQAAPX19UBETPHx8fPz8/T09Pf39/v7+/j4+PLy8vz8/Pn5+fb29vDw8Pr6+v7+/v39/aO7UDE2Pv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAABAIEAAAUwYBCNZGmeYyBJTCsISDwMBAEAS14Ux6H8jaDBkCg+jg+H0rFqOp/QKBRCrVKlWGcIADs=) top left repeat-x;
 	*background:#fff url(pix/webBg.gif) top left repeat-x;
 	color:#333;
 	text-align:center;
+	height:100%;
+	width:100%;
 }
 
 a	{outline:none; text-decoration:none}
@@ -54,11 +56,13 @@ div.entry{
 }
 div#container{
     min-width: 960px;
-    /*max-width: 1600px;*/
 	text-align: left;
 	width: auto;
 	padding: 0 10px;
-	margin: 0 auto;
+	margin: 0 auto -40px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
 }
 
 td#leftSide{
@@ -68,12 +72,13 @@ td#leftSide{
 div#wrapper {
 	width:100%;
 	overflow:hidden;
-	margin:10px 0;
+	margin:10px 0 0;
 	padding-top:15px;
 }
 
 div#content{
 	margin-right:380px;
+	padding-bottom:40px;
 }
 div#sidebar{
 	width:360px;
@@ -761,7 +766,7 @@ div#sidebar ul li.archives a:hover{
 	text-align: center;
 	margin:0;
 	width:100%;
-	position:relative
+	height:40px;
 }	
 
 div#footer div.footText p{
@@ -793,7 +798,7 @@ ul .children{
 /* Page Navigation */
 .navigation {
     font-size: 12px;
-    padding: 10px 0;
+    padding: 10px 0 20px;
     text-align: center;
 }
 
