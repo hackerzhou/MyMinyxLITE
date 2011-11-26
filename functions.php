@@ -16,6 +16,12 @@ $ENABLE_MAKEITUP_COMMENT = "enable_makeitup_comment";
 remove_action('do_feed_rss2', 'do_feed_rss2', 10, 1);
 add_action('do_feed_rss2', 'my_do_feed_rss2', 10, 1);
 add_action('after_setup_theme', 'myminyxlite_theme_setup');
+add_action('admin_init','my_admin_init',9999);
+
+function my_admin_init() {
+	wp_deregister_script('word-count');
+	wp_register_script('word-count', the_recource_url('/word-count.js', false), array( 'jquery' ), NULL);
+}
 
 function myminyxlite_theme_setup() {
 	optimize_html_head();

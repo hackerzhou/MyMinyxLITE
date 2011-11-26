@@ -1,11 +1,9 @@
-
+/* This piece of code is copyed from wp-admin/js/word-count.js, fix word counting bug */
 (function($) {
 	wpWordCount = {
 
 		settings : {
-			strip : /<[a-zA-Z\/][^<>]*>/g, // strip HTML tags
-			clean : /[0-9.(),;:!?%#$¿'"_+=\\/-]+/g, // regexp to remove punctuation, etc.
-			count : /\S\s+/g // counting regexp
+			count : /\S/g // counting regexp
 		},
 
 		block : 0,
@@ -20,8 +18,7 @@
 
 			setTimeout( function() {
 				if ( tx ) {
-					tx = tx.replace( t.settings.strip, ' ' ).replace( /&nbsp;|&#160;/gi, ' ' );
-					tx = tx.replace( t.settings.clean, '' );
+					tx = htmlTagFilter(tx);
 					tx.replace( t.settings.count, function(){tc++;} );
 				}
 				w.html(tc.toString());
@@ -30,7 +27,11 @@
 			}, 1 );
 		}
 	}
-
+	
+	function htmlTagFilter(html) {
+		return $('<div />', {html: html}).text();
+	}
+	
 	$(document).bind( 'wpcountwords', function(e, txt) {
 		wpWordCount.wc(txt);
 	});
