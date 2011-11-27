@@ -25,7 +25,7 @@ if (is_search() && $cse_id !== false) { ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="阅读文章：<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 			<?php if(!is_page()) { ?>
-				<small><?php the_time('Y-m-d G:h') ?> by <?php the_author(); edit_post_link('编辑', ' - ', '  '); ?></small>
+				<small><?php the_time('Y-m-d G:i') ?> by <?php the_author(); edit_post_link('编辑', ' - ', '  '); ?></small>
 			<?php } ?>
 			<div class="entry"><?php 
 				if (is_single() || is_page()) {
