@@ -11,7 +11,7 @@
     </div>
   </div>
   <?php endif; ?>
-  <form method="get" id="searchform" action="<?php echo home_url(); ?>/">
+  <form method="post" id="searchform" action="<?php echo home_url(); ?>/">
     <div class="searchfromInnerDiv">
       <div id="searchsubmitBtn"></div>
       <div class="icon"></div>

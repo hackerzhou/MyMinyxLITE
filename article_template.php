@@ -5,7 +5,7 @@ if (is_search() && $cse_id !== false) { ?>
 	<div id="cse" style="width: 100%">Loading ...</div>
 	<script src="http://ajax.googleapis.com/jsapi" type="text/javascript"></script>
 	<script type="text/javascript">
-	  var searchStr='<?php echo $_GET["s"]; ?>';
+	  var searchStr='<?php echo strip_tags($_POST["s"]); ?>';
 	  google.load('search', '1', {language : 'zh-CN',"nocss" : true});
 	  google.setOnLoadCallback(function() {
 		var myCb = function(){scrollToElement("#container");setHoverCursor('.gsc-cursor-page', 'pointer');};

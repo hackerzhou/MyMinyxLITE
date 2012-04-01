@@ -343,10 +343,11 @@ function the_page_title() {
 	} else if (is_year()) {
 		echo "<h2 class=\"pagetitle\">文章归档：" . get_the_time('Y年') . "</h2>";
 	} else if (is_search()) {
+		$searchKey = stripcslashes(strip_tags($_POST["s"]));
 		if (get_cse_id_if_enable() !== false || have_posts()) {
-			echo "<h2 class=\"pagetitle\">“" . stripcslashes($_GET["s"]) . "” 的搜索结果</h2>";
+			echo "<h2 class=\"pagetitle\">“" . $searchKey . "” 的搜索结果</h2>";
 		} else {
-			echo "<h2 class=\"pagetitle\">很抱歉，找不到关于“" . stripcslashes($_GET["s"]) . "” 的文章</h2>";
+			echo "<h2 class=\"pagetitle\">很抱歉，找不到关于“" . $searchKey . "” 的文章</h2>";
 		}
 	} else if (!have_posts()) {
 		echo "<h2 class=\"pagetitle\">您要访问的资源不存在或由于种种原因暂时不可见！</h2>";
