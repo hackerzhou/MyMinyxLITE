@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
@@ -13,7 +14,7 @@
 	function scrollToElement(ele){$body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');var targetY=$(ele).offset().top;var current=$body.scrollTop();var pgHeight=getPageHeight();var direction=targetY>current?1:-1;if(Math.abs(current-targetY)>pgHeight){current=targetY-direction*pgHeight;$body.scrollTop(current);}$body.animate({scrollTop:targetY}, 1000);}
 	function getPageHeight(){if($.browser.msie){return document.compatMode=="CSS1Compat"?document.documentElement.clientHeight:document.body.clientHeight;}else{return self.innerHeight;}} 
 	function setHoverCursor(ele,cursor){$(ele).hover(function(){$(this).css('cursor',cursor);},function(){$(this).css('cursor','auto');});}
-	function postComments(){scrollToElement("#respond");if($("#hackerzhou_arg0").length>0){var hasName=$("#hackerzhou_arg0").val().length>0;var hasEmail=$("#hackerzhou_arg1").val().length>0;if(!hasName){$("#hackerzhou_arg0").focus();}else if(!hasEmail){$("#hackerzhou_arg1").focus();}else{$("#comment").focus();}}else{$("#comment").focus();}}
+	function postComments(){scrollToElement("#respond");if($("input.input_0").length>0){var hasName=$("input.input_0").val().length>0;var hasEmail=$("input.input_1").val().length>0;if(!hasName){$("input.input_0").focus();}else if(!hasEmail){$("input.input_1").focus();}else{$("textarea.comm_input").focus();}}else{$("textarea.comm_input").focus();}}
 	function loadJS(js_url){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=js_url;var se=document.getElementsByTagName('script')[0]; se.parentNode.insertBefore(s,se);}
 	$(document).ready(function($){var cur=document.createElement("center");cur.appendChild(document.createElement("div"));$("ul#menu li#current").prepend(cur);$("ul#menu li.current_page_item").prepend(cur);var bqe=document.createElement("div");bqe.setAttribute("class","bqe");var b=$("div.entry blockquote");b.append(bqe);var bqs=document.createElement("div");bqs.setAttribute("class","bqs");b.prepend(bqs);$("div.entry blockquote .bqe").css("left",$("div.entry blockquote p:last").width()+35);setHoverCursor("#searchsubmitBtn", "pointer");$("#searchsubmitBtn").click(function(e){$("#searchform").submit()});});
 </script>

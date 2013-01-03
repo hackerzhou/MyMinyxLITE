@@ -13,8 +13,8 @@ Tags: right-sidebar, flexible-width, two-columns, theme-options, threaded-commen
 html,body{
 	margin:0px;
 	padding:0px;
-	font: 12px/18px "微软雅黑","Microsoft YaHei","宋体","Lucida Grande", Geneva, Arial, Verdana, sans-serif;
-	background:#fff url(data:image/gif;base64,R0lGODlhAQCBAMQAAPX19UBETPHx8fPz8/T09Pf39/v7+/j4+PLy8vz8/Pn5+fb29vDw8Pr6+v7+/v39/aO7UDE2Pv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAABAIEAAAUwYBCNZGmeYyBJTCsISDwMBAEAS14Ux6H8jaDBkCg+jg+H0rFqOp/QKBRCrVKlWGcIADs=) top left repeat-x;
+	font: normal 12px/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+        background:#fff url(data:image/gif;base64,R0lGODlhAQCBAMQAAPX19UBETPHx8fPz8/T09Pf39/v7+/j4+PLy8vz8/Pn5+fb29vDw8Pr6+v7+/v39/aO7UDE2Pv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAABAIEAAAUwYBCNZGmeYyBJTCsISDwMBAEAS14Ux6H8jaDBkCg+jg+H0rFqOp/QKBRCrVKlWGcIADs=) top left repeat-x;
 	*background:#fff url(pix/webBg.gif) top left repeat-x;
 	color:#333;
 	text-align:center;
@@ -219,6 +219,7 @@ div.post div.entry a img{
 	border-style:solid;
 	border-width:1px;
 	padding:5px;
+	margin: 5px 0px;
 }
 div.post div.entry a:link img,
 div.post div.entry a:visited img{
@@ -238,10 +239,10 @@ div.post div.entry ul li{
 	margin:0 0 0 20px;
 }		
 div.post div.entry ol{
-	list-style:decimal-leading-zero;
+	list-style:decimal;
 }	
 div.post div.entry {
-	font: 15px/180% "微软雅黑","Microsoft YaHei","宋体","Lucida Grande", Geneva, Arial, Verdana, sans-serif;
+	font-size: 14px;
 	margin-left:15px;
 }
 
@@ -436,29 +437,25 @@ ol.commentlist ul.children{
     text-shadow: 1px 1px 0 #FFFFFF;
 }
 	
-#commentform input#hackerzhou_arg0,
-#commentform input#hackerzhou_arg1,
-#commentform input#hackerzhou_arg2{
+#commentform input.comm_input{
 	background:url(pix/sprites.png) -1712px -222px no-repeat;
 	border:1px solid #CCC;
 	padding:4px 4px 4px 30px;
 	margin:0 3px 0 5px;
 	border-radius: 5px;
 	width:200px;}
-#commentform input#hackerzhou_arg0:focus,
-#commentform input#hackerzhou_arg1:focus,
-#commentform input#hackerzhou_arg2:focus,
-#commentform textarea#comment:focus {
+#commentform input.comm_input:focus,
+#commentform textarea.comm_input:focus{
 	-moz-box-shadow:0 0 8px rgba(82,168,236,0.5);
 	-webkit-box-shadow:0 0 8px rgba(82,168,236,0.5);
 	box-shadow: 0px 0px 8px rgba(82,168,236,0.5);
 	border-color:rgba(82,168,236,0.75)!important;
 }
 
-#commentform input#hackerzhou_arg0	{background-position:-1712px -222px;}
-#commentform input#hackerzhou_arg1	{background-position:-1712px -252px;}
-#commentform input#hackerzhou_arg2		{background-position:-1712px -282px;}
-	
+#commentform input.input_0	{background-position:-1712px -222px;}
+#commentform input.input_1	{background-position:-1712px -252px;}
+#commentform input.input_2	{background-position:-1712px -282px;}
+
 .nocomments,
 .nocommentsadd{
 	padding:0px;
@@ -497,7 +494,7 @@ div#commentFormWrapper{
 div#respond{
 	margin-top:10px;
 }
-textarea#comment{
+#commentform textarea.comm_input{
 	overflow-y:auto;
 	width:95%;
 	margin: 0 5px 5px 5px;
@@ -505,7 +502,6 @@ textarea#comment{
 	border-radius: 5px;
 	height:200px;
 	border: 1px solid #ccc;
-	font: 12px/18px "微软雅黑","Microsoft YaHei","宋体","Lucida Grande", Geneva, Arial, Verdana, sans-serif;
 }
 #cancel-comment-reply{
 	padding:6px 10px 0 0;
@@ -739,7 +735,6 @@ div#sidebar ul li.archives a:hover{
 }
 
 #searchform #s{
-	font: 12px "微软雅黑","Microsoft YaHei","宋体","Lucida Grande", Geneva, Arial, Verdana, sans-serif;
 	width:240px;
 	height:16px;
 }		
@@ -823,11 +818,11 @@ ul .children{
 }
 
 .navigation a.next {
-	background: url(pix/sprites.png) no-repeat -266px -234px;
+	background: url(pix/sprites.png) no-repeat -266px -236px;
 }
 
 .navigation a.prev {
-	background: url(pix/sprites.png) no-repeat -1648px -84px;
+	background: url(pix/sprites.png) no-repeat -1648px -86px;
 }
 
 .navigation a.next:hover{

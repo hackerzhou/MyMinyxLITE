@@ -17,7 +17,13 @@ require( dirname(__FILE__) . '/../../../wp-load.php' ); // 此 comments-ajax.php
 
 nocache_headers();
 
-$comment_post_ID = isset($_POST['comment_post_ID']) ? (int) $_POST['comment_post_ID'] : 0;
+$comment_post_ID = isset($_POST['hackerzhou_article_id']) ? (int) $_POST['hackerzhou_article_id'] : 0;
+$verify_ans = isset($_POST['comm_verify_ans']) ? (int) $_POST['comm_verify_ans'] : -1;
+$verify = isset($_COOKIE['comm_verify']) ? (int) $_COOKIE['comm_verify'] : -1;
+
+if (($verify == -1 && $verify_ans == -1) || ($verify_ans != countOnes($verify))) {
+	err(__('Sorry, comments are closed for this item.') . $verify . ":" . $verify_ans);
+}
 
 $post = get_post($comment_post_ID);
 
@@ -47,10 +53,15 @@ if ( !comments_open($comment_post_ID) ) {
 	do_action('pre_comment_on_post', $comment_post_ID);
 }
 
-$comment_author       = ( isset($_POST['hackerzhou_arg0']) )  ? trim(strip_tags($_POST['hackerzhou_arg0'])) : null;
-$comment_author_email = ( isset($_POST['hackerzhou_arg1']) )   ? trim($_POST['hackerzhou_arg1']) : null;
-$comment_author_url   = ( isset($_POST['hackerzhou_arg2']) )     ? trim($_POST['hackerzhou_arg2']) : null;
-$comment_content      = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
+$arg0_name = comments_field_name($comment_post_ID, 0);
+$arg1_name = comments_field_name($comment_post_ID, 1);
+$arg2_name = comments_field_name($comment_post_ID, 2);
+$arg3_name = comments_field_name($comment_post_ID, 3);
+
+$comment_author       = ( isset($_POST[$arg0_name]) ) ? trim(strip_tags($_POST[$arg0_name])) : null;
+$comment_author_email = ( isset($_POST[$arg1_name]) ) ? trim($_POST[$arg1_name]) : null;
+$comment_author_url   = ( isset($_POST[$arg2_name]) ) ? trim($_POST[$arg2_name]) : null;
+$comment_content      = ( isset($_POST[$arg3_name]) ) ? trim($_POST[$arg3_name]) : null;
 $edit_id              = ( isset($_POST['edit_id']) ) ? $_POST['edit_id'] : null; // 提取 edit_id
 
 // If the user is logged in
@@ -92,6 +103,15 @@ function err($ErrMsg) {
     exit;
 }
 
+function countOnes($v) {
+	$c = ($v & 0x55555555) + (($v >> 1) & 0x55555555);
+	$c = ($c & 0x33333333) + (($c >> 2) & 0x33333333);
+	$c = ($c & 0x0F0F0F0F) + (($c >> 4) & 0x0F0F0F0F);
+	$c = ($c & 0x00FF00FF) + (($c >> 8) & 0x00FF00FF);
+	$c = ($c & 0x0000FFFF) + (($c >> 16) & 0x0000FFFF);
+	return $c;
+}
+
 // 增加: 檢查重覆評論功能
 $dupe = "SELECT comment_ID FROM $wpdb->comments WHERE comment_post_ID = '$comment_post_ID' AND ( comment_author = '$comment_author' ";
 if ( $comment_author_email ) $dupe .= "OR comment_author_email = '$comment_author_email' ";
@@ -110,7 +130,7 @@ if ( $flood_die ) {
 	}
 }
 
-$comment_parent = isset($_POST['comment_parent']) ? absint($_POST['comment_parent']) : 0;
+$comment_parent = isset($_POST['hackerzhou_com_parent_id']) ? absint($_POST['hackerzhou_com_parent_id']) : 0;
 
 $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID');
 
@@ -129,11 +149,6 @@ if ( !$user->ID ) {
 	setcookie('comment_author_email_' . COOKIEHASH, $comment->comment_author_email, time() + $comment_cookie_lifetime, COOKIEPATH, COOKIE_DOMAIN);
 	setcookie('comment_author_url_' . COOKIEHASH, esc_url($comment->comment_author_url), time() + $comment_cookie_lifetime, COOKIEPATH, COOKIE_DOMAIN);
 }
-
-//$location = empty($_POST['redirect_to']) ? get_comment_link($comment_id) : $_POST['redirect_to'] . '#comment-' . $comment_id; //取消原有的刷新重定向
-//$location = apply_filters('comment_post_redirect', $location, $comment);
-
-//wp_redirect($location);
 
 $comment_depth = 1;   //为评论的 class 属性准备的
 $tmp_c = $comment;
